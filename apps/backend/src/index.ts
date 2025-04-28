@@ -1,15 +1,12 @@
-import { serve } from '@hono/node-server'
-import { Hono } from 'hono'
+import "dotenv/config";
 
-const app = new Hono()
+import { serve } from "@hono/node-server";
+import app from "./app.js";
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+const port = 3456;
+console.log(`Server is running on http://localhost:${port}`);
 
 serve({
   fetch: app.fetch,
-  port: 3000
-}, (info) => {
-  console.log(`Server is running on http://localhost:${info.port}`)
-})
+  port,
+});
