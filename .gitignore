@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Local env files
+.env
+.env.* 
+apps/*/.env
+apps/*/.env.*
+
+# Logs
+logs/
+*.log
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Supabase specific (if you use local CLI)
+.supabase/
+
+# Prisma
+apps/backend/prisma/dev.db
+apps/backend/prisma/dev.db-journal
+
+# Turbo Cache
+turbo/
+
+# npm/yarn/pnpm lock files (only if needed)
+# (optional: usually keep one lockfile at root)
+
+# Others
+*.tsbuildinfo
