@@ -3,6 +3,7 @@ import { logger } from "hono/logger";
 import { cors } from "hono/cors";
 
 import transactionRoutes from "./routes/transactionRoutes.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
 
 const app = new Hono();
 
@@ -14,6 +15,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(errorHandler);
 
 app.onError((err: any, c) => {
   console.error("🔥 Hono caught an unhandled error:", err);
